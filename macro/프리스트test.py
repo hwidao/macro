@@ -4,7 +4,7 @@ import threading
 
 toggle = False
 macro_thread = None
-buff_interval = 120  # 버프 주기 (사이클 단위)
+buff_interval = 180  # 버프 주기 (사이클 단위)
 cycle_count = 0
 horizontal_moves = 2  # 좌우 이동 횟수 초기값
 

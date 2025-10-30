@@ -63,7 +63,7 @@ def loop_macro():
     """메인 루프 매크로"""
     global toggle, cycle_count, horizontal_moves
     while toggle:
-        # 위 이동 4번
+        # 위 이동 4번a
         for _ in range(4):
             if not toggle:
                 return
