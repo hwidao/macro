@@ -46,7 +46,7 @@ def use_buff():
     time.sleep(0.2)  # 0.2초 동안 누름
     keyboard.release("8")
     print("[버프 사용됨]")
-    time.sleep(3.5)
+    time.sleep(2.5)
 
 
 def use_skills_d23():
