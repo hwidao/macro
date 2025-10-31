@@ -4,7 +4,7 @@ import threading
 
 toggle = False
 macro_thread = None
-buff_interval = 180  # 버프 주기 (사이클 단위)
+buff_interval = 20  # 버프 주기 (사이클 단위)
 cycle_count = 0
 horizontal_moves = 2  # 좌우 이동 횟수 초기값
 
@@ -31,7 +31,6 @@ def move_ctrl(direction):
 def attack_shift(times):
     """Shift 공격 지정 횟수만큼"""
     for _ in range(times):
-        time.sleep(0.05)
         keyboard.press("shift")
         time.sleep(0.05)
         keyboard.release("shift")
@@ -40,8 +39,12 @@ def attack_shift(times):
 
 def use_buff():
     """8번 키로 버프 한번 사용"""
-    time.sleep(0.5)
-    keyboard.press_and_release("8")
+    # time.sleep(2)
+    # keyboard.press_and_release("8")
+    time.sleep(0.5)  # 딜레이는 최소화
+    keyboard.press("8")
+    time.sleep(0.2)  # 0.2초 동안 누름
+    keyboard.release("8")
     print("[버프 사용됨]")
     time.sleep(3.5)
 
@@ -57,7 +60,7 @@ def use_skills_d23():
             keyboard.press_and_release(key)
             last_used[key] = now
             print(f"[{key.upper()} 사용됨 - 주기 {interval}s]")
-            time.sleep(0.2)  # 약간의 간격
+            time.sleep(0.5)  # 약간의 간격
 
 
 def loop_macro():
